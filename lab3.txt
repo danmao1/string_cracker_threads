@@ -12,7 +12,10 @@ real    1m17.173s
 user    1m16.832s
 sys     0m0.004s
 
-5.
+5. When you increase the threads it moreless multiply by the threads that you add.
+For example, if a program takes 1 min with 1 thread, it takes around 30 seconds with 2 threads.
+
+6.
 
 Extra Credit:
 1.Crack the following five-letter password hashes:

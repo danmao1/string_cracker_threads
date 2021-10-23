@@ -49,6 +49,7 @@ void* cracker(void* args){
         }
         for (char c='a';c<='z';c++){
             password[size-1]=c;
+            
             if(strcmp(crypt_r(password,salt,&data),target)==0){
                 printf("This is password: %s\n",password);
                 exit(0);
@@ -91,21 +92,24 @@ int main(int argc, char* argv[]){
     
     printf("this is the target: %s\n",target);
     printf("this is the salt: %s\n",salt);
-    for(int i=0;i<num_threads;i++){
-        
-        int creating_thread=pthread_create(&tid[i],NULL,cracker,NULL);
-        if(creating_thread!=0){
-            printf("Could not create thread\n");
+    while(size!=0){
+        for(int i=0;i<num_threads;i++){
+            
+            int creating_thread=pthread_create(&tid[i],NULL,cracker,NULL);
+            if(creating_thread!=0){
+                printf("Could not create thread\n");
+            }
+            
         }
-    }
-    for (int i=0;i<num_threads;i++){
+        for (int i=0;i<num_threads;i++){
+            int creating_join=pthread_join(tid[i],NULL);
+            if(creating_join!=0){
+                printf("Could not create join\n");
+            }
 
-        
-        int creating_join=pthread_join(tid[i],NULL);
-        if(creating_join!=0){
-            printf("Could not create join\n");
         }
-
+        size--;
     }
+    
     return 0;
 }
