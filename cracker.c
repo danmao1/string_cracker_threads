@@ -26,7 +26,7 @@ void* cracker(void* args){
         password[i]='a';
     }
     password[size]='\0';
-    while(password[0]!='z'){
+    while(password[0]!='{'){
         for(int i=1;i<size-1;i++){
             if(password[i]=='{'){
                 password[i]='a';
