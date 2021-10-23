@@ -1,0 +1,33 @@
+1. Sean Gerty and Daniel Mao
+
+2.The password in pass.
+
+3.The password is ferry.
+
+4.[dmao1@hopper3 ~]$ time ./crack 1 5 nomatchingpass
+this is the target: omatchingpass
+this is the salt: no
+
+real    1m17.173s
+user    1m16.832s
+sys     0m0.004s
+
+5.
+
+Extra Credit:
+1.Crack the following five-letter password hashes:
+abA.g8pU2Iffo = salts
+cdfnIXMyMCpPg = salts
+efgC/gw8PDKhs = salts
+ghLneTdBMxJP. = salts
+ijSsXTgIC7QRU = salts
+klr7dT7cAODsk = donot
+mn4iWfK0m76t6 = skipp 
+opjPsgpXaahxM = anyyy
+qr6ncfvfqecME = salts
+
+2.Explain why password salts are useful, even if they're not secret
+Because if someone steals the passwords form a database, the hacker would need to create a huge dictionary per salt that he encounters
+which would make the code for finding each password with its unique salt more time expensive. Therefore, it give also the use an opportunity 
+to have the same password but different salts make it seem that the passwords are different when they are encrypted.
+
