@@ -5,7 +5,8 @@
 #include <string.h>
 #include <crypt.h>
 
-
+//GRADING NOTE: This code slows down significantly when multiple 
+// threads are introduced. -10 points
 
 char var;
 char salt[3];
